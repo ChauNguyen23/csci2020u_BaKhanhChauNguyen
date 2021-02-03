@@ -1,0 +1,17 @@
+plugins {
+    id 'java'
+    id 'application'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    
+}
+
+application {
+    mainClassName = 'csci2020u.lab02.SimpleTest'
+}
+
