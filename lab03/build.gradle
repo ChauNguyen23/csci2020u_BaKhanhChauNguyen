@@ -1,4 +1,13 @@
-zplugins {
+buildscript {
+	repositories{
+		flatDir dirs: './proguard6.2.2/lib'
+	}
+	dependencies{
+		classpath ':proguard'		
+	}
+}
+
+plugins {
     id 'java'
     id 'application'
 }
@@ -12,6 +21,23 @@ dependencies {
 }
 
 application {
-    mainClassName = 'csci2020u.lab02.SimpleTest'
+    mainClassName = 'csci2020u.lab02.CSVDemo'
+}
+
+sourceCompatibility = 1.7
+version = '1.0'
+
+jar {
+	manifest{
+		attributes 'Main-Class': 'Test',
+		'Implementation-Title': 'lab03',
+		'Implementation-Version': version
+	}
+}
+
+task (minify, dependsOn: 'jar', type: proguard.gradle.ProGuardTask) {
+	configuration 'proguard.cfg'
+	injars 'build/libs/lab03-1.0.jar'
+	outjars 'build/libs/lab03-1.0.min.jar'
 }
 
