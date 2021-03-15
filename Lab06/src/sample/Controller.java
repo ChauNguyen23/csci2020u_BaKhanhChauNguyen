@@ -37,7 +37,6 @@ public class Controller {
     @FXML
     private void initialize() {
         gc = canvas.getGraphicsContext2D();
-
         drawPieChart(gc);
         drawBarGraph(0,100, 350, avgCommercialPricesByYear, avgHousingPricesByYear, Color.BLUE, Color.RED);
     }
@@ -82,7 +81,8 @@ public class Controller {
         int purchases = 0;
         for (int purchase: purchasesByAgeGroup)
             purchases += purchase;
-
+        GraphicsContext legend = canvas.getGraphicsContext2D();
+        GraphicsContext tag = canvas.getGraphicsContext2D();
         double startAngle = 0.0;
         for (int i = 0; i < purchasesByAgeGroup.length; i++) {
             double slicePercentage = (double) purchasesByAgeGroup[i] / (double) purchases;
@@ -90,8 +90,11 @@ public class Controller {
 
             gc.setFill(pieColours[i]);
             gc.fillArc(350, 50, 300, 300, startAngle, sweepAngle, ArcType.ROUND);
-
+            legend.setFill(pieColours[i]);
+            legend.fillRect(700, 50 + 30*i,50,20);
+            tag.strokeText(ageGroups[i], 760, 65     +30*i);
             startAngle += sweepAngle;
         }
+
     }
 }
