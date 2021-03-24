@@ -20,7 +20,7 @@ public class FileLoader {
                 // split each word in the line with a comma
                 String[] columns = line.split(",");
                 //test the column added to the list
-                //System.out.println(columns[5]);
+                System.out.println(columns[5]);
 
                 // add warning type in that column to the array list
                 warningColumn.add(columns[5]);
