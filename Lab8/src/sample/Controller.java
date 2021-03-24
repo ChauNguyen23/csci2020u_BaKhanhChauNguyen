@@ -88,7 +88,7 @@ public class Controller {
         fileChooser.getExtensionFilters().addAll(
                 new FileChooser.ExtensionFilter("Text Files", "*.txt"),
                 new FileChooser.ExtensionFilter("All Files", "*.*"));
-        currentFilename = fileChooser.showSaveDialog(tabView.getScene().getWindow());
+        currentFilename = fileChooser.showOpenDialog(tabView.getScene().getWindow());
         save(e);
     }
     @FXML
