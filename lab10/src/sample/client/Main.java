@@ -1,4 +1,4 @@
-package sample;
+package sample.client;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
@@ -11,7 +11,7 @@ public class Main extends Application {
     @Override
     public void start(Stage primaryStage) throws Exception{
         Parent root = FXMLLoader.load(getClass().getResource("sample.fxml"));
-        primaryStage.setTitle("Lab 9 Stock Performance");
+        primaryStage.setTitle("Client");
         primaryStage.setScene(new Scene(root, 300, 275));
         primaryStage.show();
     }
@@ -21,3 +21,7 @@ public class Main extends Application {
         launch(args);
     }
 }
+
+//create 2 packages client and server
+// 1 main class for each
+// 1 configuration for each, client and server, call main

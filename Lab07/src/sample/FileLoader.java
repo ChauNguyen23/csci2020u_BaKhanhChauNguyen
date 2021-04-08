@@ -16,6 +16,7 @@ public class FileLoader {
         List<String> warningColumn = new ArrayList<String>();
         try{
             BufferedReader br = new BufferedReader(new FileReader(this.filename));
+
             while ((line = br.readLine())!=null){
                 // split each word in the line with a comma
                 String[] columns = line.split(",");

@@ -1,4 +1,6 @@
-package sample;
+package sample.server;
+
+import sample.client.ClientHandler;
 
 import java.io.BufferedReader;
 import java.io.IOException;
